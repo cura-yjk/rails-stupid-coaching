@@ -1,0 +1,38 @@
+<% if params[:question].include?("I am going to work") %>
+  <% if params[:question].end_with?("?") %>
+    <% answer = "Silly question, get dressed and go to work!" %>
+  <% else %>
+    <% answer = "Great!" %>
+  <% end %>
+<% else %>
+  <%answer = "I don't care, get dressed and go to work!" %>
+<% end %>
+<div class="card">
+  <div class="card-header">
+  </div>
+  <div class="card-body">
+    <figure>
+      <blockquote class="blockquote">
+        <p><%= params[:question] %></p>
+      </blockquote>
+      <figcaption class="blockquote-footer">
+        You
+      </figcaption>
+    </figure>
+  </div>
+</div>
+<div class="card">
+  <div class="card-header">
+  </div>
+  <div class="card-body">
+    <figure>
+      <blockquote class="blockquote">
+        <p><%= answer %></p>
+      </blockquote>
+      <figcaption class="blockquote-footer">
+        Your Coach
+      </figcaption>
+    </figure>
+  </div>
+</div>
+<%= link_to "Ask a new question.", ask_path %>
